@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Competitor Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" aria-label="Toggle Theme">
+            <span class="icon">☀️</span>
+        </button>
+    </header>
+
+    <main class="container">
+        <h1>SEO Competitor Analyzer</h1>
+        <p>Analyze a competitor's website for SEO insights (headings, meta tags, and more).</p>
+
+        <div class="utm-generator">
+            <div class="form-group">
+                <label for="competitor-url">Competitor URL* (e.g., https://example.com):</label>
+                <input type="url" id="competitor-url" placeholder="https://example.com" required>
+
+                <label>Analysis Options:</label>
+                <div class="switch-group">
+                    <label class="switch-label">
+                        <input type="checkbox" id="headings" checked>
+                        <span class="switch">
+                            <span class="switch-inner"></span>
+                        </span>
+                        Headings (H1-H6)
+                    </label>
+                    <label class="switch-label">
+                        <input type="checkbox" id="meta" checked>
+                        <span class="switch">
+                            <span class="switch-inner"></span>
+                        </span>
+                        Meta Tags (title, description)
+                    </label>
+                    <label class="switch-label">
+                        <input type="checkbox" id="links">
+                        <span class="switch">
+                            <span class="switch-inner"></span>
+                        </span>
+                        Links Count
+                    </label>
+                </div>
+
+                <button id="analyze-seo" class="generate-btn">Analyze SEO</button>
+            </div>
+            <div class="utm-output">
+                <span id="seo-status">Enter a URL and click "Analyze SEO" to see results.</span>
+                <button id="download-csv" class="copy-btn" disabled>Download CSV</button>
+            </div>
+        </div>
+
+        <p>Want to see the code? Check it out on GitHub: <a href="https://github.com/Dev-Geniy/SEO-Competitor-Analyzer" target="_blank">https://github.com/Dev-Geniy/SEO-Competitor-Analyzer</a></p>
+        <p class="note">Note: Replace the link above with your own GitHub repository URL in the HTML file.</p>
+    </main>
+
+    <footer class="footer">
+        <div class="social">
+            <img src="https://cdn3d.iconscout.com/3d/free/thumb/free-twitter-x-3d-icon-download-in-png-blend-fbx-gltf-file-formats--logo-network-social-media-pack-logos-icons-8050016.png?f=webp" alt="Twitter Icon" class="twitter-icon">
+            <div>
+                <a href="https://twitter.com/HotDog850642" target="_blank">@HotDog850642</a>
+                <p>I'm a code developer. Feel free to reach out!</p>
+            </div>
+        </div>
+        <div class="donation">
+            <h3>For voluntary donations</h3>
+            <div class="btc-address">
+                <span id="btc-code">bc1q3r5gad7dxc276ael06n02gek7ncm536hpndgmq</span>
+                <button class="copy-btn" data-target="btc-code">Copy</button>
+            </div>
+            <p class="thanks">Thank you for your support!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
