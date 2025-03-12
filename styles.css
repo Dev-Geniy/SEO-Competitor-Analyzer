@@ -1,0 +1,647 @@
+:root {
+
+    --bg-color: #ffffff;
+
+    --text-color: #333333;
+
+    --button-bg: #007bff;
+
+    --code-bg: #f5f5f5;
+
+    --code-border: #ddd;
+
+}
+
+[data-theme="dark"] {
+
+    --bg-color: #1a1a1a;
+
+    --text-color: #ffffff;
+
+    --button-bg: #ff4444;
+
+    --code-bg: #2b2b2b;
+
+    --code-border: #444;
+
+}
+
+body {
+
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+
+    font-family: 'Arial', sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+    transition: all 0.3s ease;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+header {
+
+    position: relative;
+
+    padding: 15px;
+
+}
+
+#theme-toggle {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    background: var(--button-bg);
+
+    color: white;
+
+    border: none;
+
+    padding: 8px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: background-color 0.3s;
+
+}
+
+#theme-toggle:hover {
+
+    opacity: 0.9;
+
+}
+
+.container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    text-align: center;
+
+    flex: 1;
+
+}
+
+h1 {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+}
+
+p {
+
+    font-size: 1.1rem;
+
+    margin-bottom: 20px;
+
+}
+
+a {
+
+    color: var(--button-bg);
+
+    text-decoration: none;
+
+}
+
+a:hover {
+
+    text-decoration: underline;
+
+}
+
+.note {
+
+    font-size: 0.9rem;
+
+    color: #666;
+
+}
+
+[data-theme="dark"] .note {
+
+    color: #aaa;
+
+}
+
+/* UTM Link Generator Styles */
+
+.utm-generator {
+
+    background: var(--code-bg);
+
+    border: 1px solid var(--code-border);
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    max-width: 600px;
+
+    margin: 0 auto 20px;
+
+}
+
+.form-group {
+
+    text-align: left;
+
+}
+
+.form-group label {
+
+    display: block;
+
+    font-size: 1rem;
+
+    margin-bottom: 5px;
+
+}
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 8px;
+
+    font-size: 1rem;
+
+    border: 1px solid var(--code-border);
+
+    border-radius: 4px;
+
+    background: var(--bg-color);
+
+    color: var(--text-color);
+
+    margin-bottom: 15px;
+
+    box-sizing: border-box;
+
+}
+
+.generate-btn {
+
+    background: var(--button-bg);
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+    font-size: 1rem;
+
+    width: 100%;
+
+}
+
+.generate-btn:hover {
+
+    opacity: 0.9;
+
+}
+
+.utm-output {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+#utm-link {
+
+    font-family: 'Courier New', Courier, monospace;
+
+    font-size: 1rem;
+
+    background: var(--bg-color);
+
+    padding: 8px;
+
+    border: 1px solid var(--code-border);
+
+    border-radius: 4px;
+
+    word-break: break-all;
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.copy-btn {
+
+    background: var(--button-bg);
+
+    color: white;
+
+    border: none;
+
+    padding: 6px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+    font-size: 0.9rem;
+
+}
+
+.copy-btn:disabled {
+
+    background: #ccc;
+
+    cursor: not-allowed;
+
+}
+
+[data-theme="dark"] .copy-btn:disabled {
+
+    background: #555;
+
+}
+
+.copy-btn:hover:not(:disabled) {
+
+    opacity: 0.9;
+
+}
+
+/* Footer styles */
+
+.footer {
+
+    background: var(--code-bg);
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--code-border);
+
+}
+
+.social {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.twitter-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+}
+
+.social a {
+
+    color: var(--text-color);
+
+    text-decoration: none;
+
+    font-size: 1.1rem;
+
+}
+
+.social a:hover {
+
+    text-decoration: underline;
+
+}
+
+.social p {
+
+    margin: 5px 0 0;
+
+    font-size: 0.9rem;
+
+}
+
+.donation {
+
+    margin-top: 15px;
+
+}
+
+.donation h3 {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 8px;
+
+}
+
+.btc-address {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+#btc-code {
+
+    font-family: 'Courier New', Courier, monospace;
+
+    font-size: 0.9rem;
+
+    background: var(--bg-color);
+
+    padding: 4px 8px;
+
+    border: 1px solid var(--code-border);
+
+    border-radius: 4px;
+
+    word-break: break-all;
+
+    max-width: 100%;
+
+}
+
+.thanks {
+
+    margin-top: 8px;
+
+    font-size: 0.9rem;
+
+    font-style: italic;
+
+}
+
+/* Медиа-запросы для адаптивности */
+
+@media (max-width: 768px) {
+
+    .container {
+
+        padding: 15px;
+
+    }
+
+    h1 {
+
+        font-size: 1.8rem;
+
+    }
+
+    p {
+
+        font-size: 1rem;
+
+    }
+
+    .utm-generator {
+
+        padding: 15px;
+
+    }
+
+    #theme-toggle {
+
+        top: 10px;
+
+        right: 10px;
+
+        padding: 6px;
+
+        font-size: 16px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+
+        font-size: 1.5rem;
+
+    }
+
+    p {
+
+        font-size: 0.9rem;
+
+    }
+
+    .form-group label {
+
+        font-size: 0.9rem;
+
+    }
+
+    .form-group input {
+
+        font-size: 0.9rem;
+
+        padding: 6px;
+
+    }
+
+    .generate-btn {
+
+        padding: 8px 16px;
+
+        font-size: 0.9rem;
+
+    }
+
+    #utm-link {
+
+        font-size: 0.9rem;
+
+        padding: 6px;
+
+    }
+
+    .copy-btn {
+
+        padding: 5px 10px;
+
+        font-size: 0.8rem;
+
+    }
+
+    .utm-output {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .social {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .twitter-icon {
+
+        margin-bottom: 5px;
+
+    }
+
+    .donation h3 {
+
+        font-size: 1.1rem;
+
+    }
+
+    #btc-code {
+
+        font-size: 0.8rem;
+
+    }
+
+}
+
+.checkbox-group {
+    margin-bottom: 15px;
+}
+
+.checkbox-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.switch-group {
+    margin-bottom: 15px;
+}
+
+.switch-label {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.switch-label input[type="checkbox"] {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.switch-inner {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Состояние включено */
+.switch-label input[type="checkbox"]:checked + .switch {
+    background-color: var(--button-bg); /* #007bff в светлой теме, #ff4444 в тёмной */
+}
+
+.switch-label input[type="checkbox"]:checked + .switch .switch-inner {
+    transform: translateX(26px);
+    box-shadow: 0 0 8px var(--button-bg), 0 0 12px rgba(var(--button-bg), 0.7); /* Эффект свечения */
+}
+
+/* Ховер-эффект */
+.switch:hover {
+    opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .switch {
+        width: 40px;
+        height: 20px;
+    }
+
+    .switch-inner {
+        width: 16px;
+        height: 16px;
+    }
+
+    .switch-label input[type="checkbox"]:checked + .switch .switch-inner {
+        transform: translateX(20px);
+    }
+
+    .switch-label {
+        font-size: 0.9rem;
+    }
+}
